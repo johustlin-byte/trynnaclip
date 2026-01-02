@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>On Page Clipping — Hust</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: #0f0f0f;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    header {
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    /* LOGO */
+    .logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .logo svg {
+      width: 50px;
+      height: 50px;
+    }
+
+    .logo h1 {
+      font-size: 28px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: 20px auto;
+      font-size: 18px;
+      color: #d4d4d4;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 14px 32px;
+      background: #ff3d3d;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #ff5c5c;
+    }
+
+    section {
+      padding: 70px 0;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 32px;
+    }
+
+    /* PACKAGES */
+    .packages {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: #1a1a1a;
+      padding: 30px;
+      border-radius: 12px;
+      text-align: center;
+      border: 1px solid #2a2a2a;
+    }
+
+    .card h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      font-size: 22px;
+      font-weight: bold;
+      margin: 15px 0;
+      color: #ff3d3d;
+    }
+
+    .card p {
+      color: #cccccc;
+      font-size: 15px;
+    }
+
+    .note {
+      margin-top: 30px;
+      text-align: center;
+      color: #b5b5b5;
+      font-size: 14px;
+    }
+
+    /* CONTACT */
+    form {
+      max-width: 600px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input, textarea {
+      padding: 14px;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+      background: #1a1a1a;
+      color: #fff;
+      border: 1px solid #2a2a2a;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    button {
+      padding: 14px;
+      background: #ff3d3d;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #ff5c5c;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 40px 0;
+      border-top: 1px solid #2a2a2a;
+      text-align: center;
+    }
+
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+
+    footer p {
+      font-size: 14px;
+      color: #b5b5b5;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER / HERO -->
+  <header class="container hero">
+    <div class="logo">
+      <!-- SIMPLE SVG LOGO -->
+      <svg viewBox="0 0 100 100" fill="none">
+        <rect x="10" y="10" width="80" height="80" rx="20" fill="#ff3d3d"/>
+        <path d="M35 30V70M65 30V70" stroke="white" stroke-width="8"/>
+      </svg>
+      <h1>HUST CLIPPING</h1>
+    </div>
+
+    <p>
+      Gue nyediain jasa <strong>On Page Clipping</strong> yang fokus ke performa,
+      views real, dan eksekusi rapi.  
+      Cocok buat lo yang mau ningkatin exposure konten tanpa ribet.
+    </p>
+
+    <a href="#contact" class="btn">Hubungi Gue Sekarang</a>
+  </header>
+
+  <!-- PACKAGES -->
+  <section class="container">
+    <h2>Paket Clipping</h2>
+
+    <div class="packages">
+      <div class="card">
+        <h3>Basic</h3>
+        <div class="price">$10</div>
+        <p>1000 Views</p>
+      </div>
+
+      <div class="card">
+        <h3>Medium</h3>
+        <div class="price">$25</div>
+        <p>2500 Views</p>
+      </div>
+
+      <div class="card">
+        <h3>Pro</h3>
+        <div class="price">$100</div>
+        <p>10000 Views</p>
+      </div>
+    </div>
+
+    <p class="note">
+      Jika melebihi 10.000 views, akan dikenakan tambahan <strong>$10 / 1000 views</strong>.
+    </p>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="container" id="contact">
+    <h2>Kontak Gue</h2>
+
+    <form>
+      <input type="text" placeholder="Nama" required />
+      <input type="email" placeholder="Email" required />
+      <input type="tel" placeholder="Nomor Telepon / WhatsApp" required />
+      <textarea placeholder="Pesan lo..."></textarea>
+      <button type="submit">Kirim Pesan</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="container">
+    <div class="socials">
+      <a href="https://instagram.com/hust.mp4" target="_blank">Instagram</a>
+      <a href="https://www.tiktok.com/@trynna%20clip" target="_blank">TikTok</a>
+      <a href="https://www.youtube.com/@trynnaclip" target="_blank">YouTube</a>
+    </div>
+
+    <p>
+      Email: johustlin@gmail.com | WhatsApp: +62 858 1519 6293
+    </p>
+  </footer>
+
+</body>
+</html>
